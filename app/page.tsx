@@ -14,7 +14,7 @@ export default function Home() {
   const [timeLeft, setTimeLeft] = useState<number>(30);
 
   useEffect(() => {
-    let timer: number;
+    let timer: NodeJS.Timeout;
     if (gameState === "playing" && timeLeft > 0) {
       timer = setInterval(() => {
         setTimeLeft((prev) => prev - 1);
